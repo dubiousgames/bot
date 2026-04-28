@@ -14,7 +14,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 WELCOME_CHANNEL_ID = 1478417715743162450  
 AUTO_ROLE_ID = 1445500038867583157      
-THE_WARDEN_ID = 123456789012345678 # <--- CHANGE THIS to your Discord ID!
+THE_WARDEN_ID = 1331287355784560728 # <--- CHANGE THIS to your Discord ID!
 
 # Set up the bot
 intents = discord.Intents.default()
