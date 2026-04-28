@@ -76,7 +76,7 @@ async def on_message(message):
     data["xp"][user_id] = data["xp"].get(user_id, 0) + 5
     save_data(data)
 
-  # 2. AI Logic (Only if @mentioned)
+# 2. AI Logic (Only if @mentioned)
     if bot.user.mentioned_in(message):
         async with message.channel.typing():
             prompt = (
@@ -84,7 +84,6 @@ async def on_message(message):
                 "Format exactly like this: THOUGHT: [1-sentence dubious internal thought] | RESPONSE: [Direct response as DUBIOUSASSISTENT]"
             )
             
-            # Use the stable 2.0-flash name for the 2026 library
             response = ai_client.models.generate_content(
                 model="gemini-2.0-flash", 
                 contents=prompt
@@ -99,10 +98,8 @@ async def on_message(message):
                 await message.channel.send(final_reply)
             else:
                 await message.channel.send(full_res)
-            else:
-                await message.channel.send(full_res)
 
-    # 3. Process Commands (Makes !rank, !when work)
+    # 3. Process Commands (Crucial for !rank and !when to work!)
     await bot.process_commands(message)
 
 # --- COMMANDS ---
