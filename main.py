@@ -1,13 +1,12 @@
 import discord
-import os
 import random
 import json
 from discord.ext import commands
+import os
 from dotenv import load_dotenv
 
-# 1. Load the secret token from .env
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+load_dotenv() # This looks for a .env file locally
+TOKEN = os.getenv('DISCORD_TOKEN') # This looks for the GitHub Secret if the file is missing
 
 # --- INTENTS
 intents = discord.Intents.all() # This tells Discord "I want access to EVERYTHING"
