@@ -86,8 +86,9 @@ async def on_message(message):
             
             # Use the new 2026 'gemini-3-flash' model
             response = ai_client.models.generate_content(
-                model="gemini-3-flash", 
-                contents=prompt
+            model="gemini-2.0-flash", 
+            contents=prompt
+            )
             )
             
             full_res = response.text
